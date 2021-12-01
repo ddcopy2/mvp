@@ -1,0 +1,65 @@
+:root{
+  // Color Common
+  --bg-video: hsl(0,0%,10%);
+  --black-transp: hsla(0,0%,0%,.5);
+
+  // Dark Theme
+  --bg: hsl(210,67%,10%);
+  --bg-second: hsl(210,67%,17%);
+  --bg-transp: hsla(210,67%,17%,.6);
+  --accent-color: hsl(35,63%,50%);
+  --accent-transp: hsla(35,63%,50%,.5);
+  --box-shadow: hsla(210,67%,70%,.4);
+  --hover-pagination: hsla(210,67%,30%,.4);
+  // --bg-svg: hsla(210,67%,10%,.8); //ojo
+  --color-text: #fff;
+  --color-title: hsl(219,79%,66%);
+  --icon-static: hsl(210,67%,75%);
+  // --color-text-bg: hsl(210,67%,95%);
+  // --color-text-nav: hsl(0,0%,65%);
+  // --color-nav-hover: var(--color-text);
+  // --color-text-alter: hsl(0,0%,85%);
+  // --link: hsl(210,67%,70%);
+  // --link-bg: var(--link);
+  --border-color: hsl(210,67%,30%);
+  --border-cover: hsl(210,67%,15%);
+  // --burger-icon: var(--color-title);
+  --bg-layer: 
+      linear-gradient(
+        hsla(210,67%,10%,.7) 80%,
+        hsl(210,67%,10%) 100% 
+      );
+  // --icon-theme: 0 0;
+  // --icon-theme-bg: #E8BB32;
+  --icon-disable: hsl(210,67%,18%);
+  // --icon-hover: var(--color-text);
+  
+  // Font Size
+  --size-title: 1.4rem;
+  --size-text: .9rem;
+  --size-subtitle: 1.1rem;
+  @media (min-width: 768px){
+    --size-title: 1.6rem;
+    --size-subtitle: 1.2rem;
+  }
+  @media (min-width: 1024px){
+    --size-title: 2rem;
+    --size-text: 1rem;
+  }
+
+  // Font Family
+  --font-text: Roboto, sans-serif;
+  --font-title: Lato, sans-serif;
+
+  // Others
+  --radius-cover: 4% / 2.7%;
+  --radius: .4rem;
+
+  --outside-spacing: 4rem;
+  --inside-spacing: 1.2rem;
+  --component-spacing: 1.8rem;
+  @media(min-width: 1024px){
+    --outside-spacing: 5rem;
+    --component-spacing: 2.5rem;
+  }
+}

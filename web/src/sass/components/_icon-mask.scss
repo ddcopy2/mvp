@@ -1,0 +1,45 @@
+.icon-mask{
+  background: var(--icon-static);
+  mask-size: 10rem 2rem;
+  mask-image: url(../img/icons-mask.svg);
+}
+
+.icon-clock{
+  mask-position: -2rem 0;
+}
+
+.icon-quality{
+  mask-position: -3rem 0;
+}
+
+.icon-year{
+  mask-position: -4rem 0;
+}
+
+.icon-genres{
+  mask-position: -5rem 0;
+}
+
+.icon-lang{
+  mask-position: -6rem 0;
+}
+
+.icon-arrow{
+  mask-position: -1rem -1rem;
+}
+
+.icon-eye{
+  mask-position: 0 -1rem;
+}
+
+.icon-youtube{
+  mask-position: -8rem 0;
+}
+
+.icon-nav{
+  mask-position: -3rem -1rem;
+}
+
+.icon-download{
+  mask-position: -9rem 0;
+}

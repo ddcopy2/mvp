@@ -1,0 +1,24 @@
+body{
+  display: grid;
+  grid-template: 4rem 1fr 2.5rem / 1fr;
+  min-height: 100vh;
+  @media (min-width: 768px){
+    grid-template: 5rem 1fr 2.5rem / 1fr;
+  }
+}
+
+.wrapper{
+  width: calc(100% - 2rem);
+  margin: 1.5rem auto var(--outside-spacing);
+  @media (min-width: 1024px){
+    max-width: 75rem;
+  }
+}
+
+.bg-poster{
+  position: fixed;
+  top: 0;
+  z-index: -100;
+  width: 100%;
+  height: 50vh;
+}

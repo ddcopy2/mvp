@@ -1,0 +1,24 @@
+block dataBase
+  include ../db/collections/db-top
+  include ../components/mixins/card-top
+include var-config
+doctype
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title= title
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="preload" as="font" type="font/woff2" href=`${root}res/fonts/lato-regular.woff2` crossorigin)
+    link(rel="preload" as="font" type="font/woff2" href=`${root}res/fonts/roboto-300.woff2` crossorigin)
+    link(rel="stylesheet" href=`${root}res/css/main.css${timestampCSS}`)
+    link(rel="shortcut icon" href=`${root}favicon.png` type="image/x-icon")
+  body
+    include ../views/header
+    include ../components/bg-poster
+    .wrapper
+      block content
+        h1(style='color:cornflowerblue; text-align: center; margin: 2rem;') Hello World!
+    include ../views/footer
+    script(src=`${root}res/js/main.js${timestampJS}` type="module")
+    script(src=`${root}res/js/main-es5.js${timestampJS}` nomodule)

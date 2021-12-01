@@ -1,0 +1,17 @@
+extends template-master
+prepend dataBase
+  include ../db/collections/db-published
+  include var-pagination
+  include ../components/mixins/card-show
+  include ../components/mixins/pagination
+block content
+  .wrapper-catalogue
+    main(role='main').main-show
+      .title-show
+        h1 Películas Recientes
+        if totalHomePages > 1
+          .pages Pág.- &nbsp&nbsp#{page} / #{totalHomePages}
+      .wrapper-card-show
+        +card-show(published)
+      +pagination()
+    include ../views/rating

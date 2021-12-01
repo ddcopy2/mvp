@@ -1,0 +1,19 @@
+-
+  // TimeStamp
+  let timestampCSS = '';
+  let timestampJS = '';
+ 
+  // Variables Comunes
+  let title = 'DDCopy | Películas Online';
+  let root = '';
+  let poster = 'rollo-de-pelicula';
+
+  
+  if(typeof(published) != 'undefined' && page > 1){
+    root = '../';
+
+  }else if(typeof(movie) != 'undefined'){
+    root = '../../';
+    title = `${movie.titleLatin} (${movie.year})`;
+    poster = `${movie.year}/${movie.url}`;
+  }

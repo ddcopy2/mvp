@@ -1,0 +1,37 @@
+//Config
+  @import 'config/fonts';
+  @import 'config/variables';
+
+//Tools [ Mixins y Funciones Sass ]
+
+//Generic
+  @import 'generic/reset';
+  @import 'generic/tags';
+
+//Layout
+  @import 'layout/layout-master';
+  @import 'layout/layout-header';
+  @import 'layout/layout-wrapper-catalogue';
+  @import 'layout/layout-wrapper-movie';
+  @import 'layout/layout-movie-info';
+  @import 'layout/layout-card-show';
+  @import 'layout/layout-card-top';
+  @import 'layout/layout-footer';
+  
+  //Components
+  @import 'components/bg-poster';
+  @import 'components/icon-color';
+  @import 'components/icon-mask';
+  @import 'components/nav-main';
+  @import 'components/card-show';
+  @import 'components/online-movie';
+  @import 'components/online-download';
+  @import 'components/card-top';
+  @import 'components/nav-pagination';
+  @import 'components/preloader';
+
+//Themes
+
+//Utils
+  @import 'utils/utils';
+  @import 'utils/hacks';

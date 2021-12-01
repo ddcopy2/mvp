@@ -1,0 +1,203 @@
+.movie__info{
+  display: grid;
+  grid-gap: var(--inside-spacing);
+  grid-template: repeat(10, auto) / 37.6% 1fr;
+  .icon-mask{
+    width: 1rem;
+    height: 1rem;
+    margin-right: .5rem;
+  }
+}
+
+.see-synopsis{
+  .movie__synopsis--hidden{
+    height: 100%;
+  }
+  .icon-mask{
+    transform: rotate(180deg);
+  }
+  @media (min-width: 768px){
+    .movie__read{
+      height: 100%;
+    }
+  }
+}
+
+.movie__synopsis--hidden{
+  overflow: hidden;
+  height: 6.16rem;
+  line-height: 1.4;
+  font-size: var(--size-subtitle);
+  transition: height .3s linear;
+  @media (min-width: 768px){
+    width: 80%;
+    height: 3.84rem;
+    float: left;
+    line-height: 1.6;
+  }
+  p:not(:last-child){
+    margin-bottom: 1rem;
+  }
+}
+
+.movie__read{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-top: .25rem;
+  border-top: 1px solid var(--accent-transp);
+  @media (min-width: 768px){
+    width: 20%;
+    height: 3.84rem;
+    border-top: none;
+    border-bottom: 1px solid var(--accent-transp);
+    padding-bottom: .5rem;
+    transition: height .3s linear;
+  }
+  .icon-mask{
+    background: var(--accent-color);
+    transition: transform .5s linear;
+  }
+  &-content{
+    display: flex;
+    cursor: pointer;
+    margin-top: auto;
+  }
+  &-text{
+    font-weight: bold;
+    color: var(--accent-color);
+    line-height: 1;
+  }
+}
+
+.movie__title{
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+}
+
+.movie__synopsis{
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
+}
+
+.movie__subtitle{
+  grid-row: 3 / 4;
+  grid-column: 1 / 3;
+}
+
+.movie__img{
+  grid-row: 4 / 7;
+  grid-column: 1 / 2;
+  position: relative;
+  overflow: hidden;
+  border: var(--border-cover);
+  border-radius: var(--radius-cover);
+  picture{
+    position: absolute;
+    top: 0;
+  }
+  &::after{
+    content: '';
+    display: block;
+    padding-top: 148.13%;
+    background: var(--bg-second);
+    @media(min-width: 768px){
+      padding-top: 148.11%;
+    }
+    @media(min-width: 1024px){
+      padding-top: 147.92%;
+    }
+  }
+}
+
+.movie__genres{
+  grid-row: 7 / 8;
+  grid-column: 1 / 3;
+}
+
+.movie__lang{
+  grid-row: 8 / 9;
+  grid-column: 1 / 3;
+}
+
+.movie__actors{
+  grid-row: 9 / 10;
+  grid-column: 1 / 3;
+  line-height: 1.4;
+}
+
+.movie__director{
+  grid-row: 10 / 11;
+  grid-column: 1 / 3;
+}
+
+.movie__year, .movie__time,
+.movie__quality, .movie__genres,
+.movie__lang, .movie__title, .movie__subtitle{
+  display: flex;
+  align-items: center;
+}
+
+.movie__actors,
+.movie__director{
+  margin: auto 0;
+  span{
+    color: var(--icon-static);
+  }
+}
+
+@media (min-width: 768px){
+  .movie__info{
+    grid-gap: var(--inside-spacing);
+    grid-template: repeat(8, auto) / 30% repeat(3, auto) 1fr;
+  }
+  .movie__img{
+    grid-row: 2 / 8;
+  }
+  .movie__subtitle{
+    grid-row: 2 / 3;
+    grid-column: 2 / 6;
+  }
+  .movie__year{
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    margin-right: 1.5rem;
+  }
+  .movie__time{
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+    margin-right: 1.5rem;
+  }
+  .movie__genres{
+    grid-row: 4 / 5;
+    grid-column: 2 / 6;
+  }
+  .movie__lang{
+    grid-row: 5 / 6;
+    grid-column: 2 / 6;
+  }
+  .movie__director{
+    grid-row: 6 / 7;
+    grid-column: 2 / 6;
+  }
+  .movie__actors{
+    grid-row: 7 / 8;
+    grid-column: 2 / 6;
+  }
+  .movie__synopsis{
+    grid-row: 8 / 9;
+    grid-column: 1 / 6;
+  }
+}
+
+@media (min-width: 1024px){
+  .movie__info{
+    grid-template: repeat(8, auto) / 20% repeat(3, auto) 1fr;
+  }
+  .movie__img{
+    grid-row: 1 / 8;
+  }
+  .movie__title{
+    grid-column: 2 / 6;
+  }
+}

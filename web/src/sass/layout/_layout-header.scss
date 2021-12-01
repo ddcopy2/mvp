@@ -1,0 +1,23 @@
+.header, .header-box{
+  display: flex;
+  align-items: center;
+}
+
+.header-box{
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  justify-content: space-between;
+  @media (min-width: 1024px){
+    max-width: 75rem;
+  }
+}
+
+.logo{
+  width: 7rem;
+  @media (min-width: 768px){
+    width: 8rem;
+  }
+  @media (min-width: 1024px){
+    width: 9rem;
+  }
+}

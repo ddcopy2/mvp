@@ -1,0 +1,121 @@
+-
+  let maxBtn = 7
+  let numberBtn = []
+
+  if(totalHomePages > 1){
+
+    if(totalHomePages <= maxBtn){
+      for(i = 1; i <= totalHomePages; i++){
+        numberBtn.push(i)
+      }
+    }else{
+      
+      if(page <= 4){
+        for(i = 1; i <= 6; i++){
+          numberBtn.push(i)
+        }
+
+      }else if(page >=5 && page + 2 < totalHomePages){
+        numberBtn.push(1)
+        for(i = page - 2; i <= page + 2; i++){
+          numberBtn.push(i)
+        }
+
+      }else{
+        numberBtn.push(1)
+        for(i = totalHomePages - 5; i < totalHomePages; i++){
+          numberBtn.push(i)
+        }
+      }
+      numberBtn.push(totalHomePages)
+    }
+  }
+
+
+
+mixin pagination()
+  if numberBtn.length > 0
+    nav.pagination
+
+      //- Flechas interactivas Izquierdas
+      if totalHomePages > maxBtn
+        .pagination__arrow-left
+
+          //- Logica ir a la primera Pagina
+          if page > 1
+            a(href='/')
+              .icon-mask.icon-next
+          else
+              .icon-mask.icon-next.icon-disable
+
+          //- Logica ir a la pagina Anterior
+          if page == 1 
+            .icon-mask.icon-arrow.icon-disable
+          else if page == 2
+            a(href='/')
+              .icon-mask.icon-arrow
+          else 
+            a(href=`${page - 1}.html`)
+              .icon-mask.icon-arrow
+
+
+      //- Logica de pintado de Botones
+      ul.pagination__items
+        each btn, i in numberBtn
+
+          //- Puntos de separacion al inicio
+          if i == 1 && btn > 2
+            li.pagination__elipsis ...
+
+          //--Pintado de Botones
+          if page == 1
+            if page == btn
+              li.pagination__btn.pagination__btn--active 1
+            else 
+              a(href=`pagina/${btn}.html`)
+                li.pagination__btn= btn
+          else 
+            if btn == 1
+              a(href='/')
+                li.pagination__btn= btn
+            else 
+              if page == btn
+                li.pagination__btn.pagination__btn--active= btn
+              else 
+                a(href=`${btn}.html`)
+                  li.pagination__btn= btn
+
+          //- Puntos de separacion al final
+          if i == 5 && btn + 1 < totalHomePages
+            li.pagination__elipsis ...
+
+
+      //- Flechas interactivas Derechas
+      if totalHomePages > maxBtn
+        .pagination__arrow-right
+
+          //- Logica ir a Siguiente Pagina
+          if page == 1
+            a(href='pagina/2.html')
+              .icon-mask.icon-arrow
+          else if page == totalHomePages
+            .icon-mask.icon-arrow.icon-disable
+          else 
+            a(href=`${page + 1}.html`)
+              .icon-mask.icon-arrow
+
+          //- Logica ir a Ultima Pagina
+          if page == 1
+            a(href=`pagina/${totalHomePages}.html`)
+              .icon-mask.icon-next
+          else if page == totalHomePages
+            .icon-mask.icon-next.icon-disable
+          else
+            a(href=`${totalHomePages}.html`)
+              .icon-mask.icon-next
+
+
+
+          
+
+//- li.pagination__elipsis ...

@@ -1,0 +1,24 @@
+mixin options(data)
+  each option, i in data
+    if i === 0
+      .option-item.option-item--layer.active
+        .option-item__layer
+        .option-item__number= i + 1
+        .option-item__content
+          .option-item__quality
+            .icon-mask.icon-quality
+            .option-quality= option.quality
+          .option-item__lang
+            .icon-mask.icon-lang
+            .option-lang= option.lang
+    else
+      .option-item
+        .option-item__layer
+        .option-item__number= i + 1
+        .option-item__content
+          .option-item__quality
+            .icon-mask.icon-quality
+            .option-quality= option.quality
+          .option-item__lang
+            .icon-mask.icon-lang
+            .option-lang= option.lang

@@ -1,0 +1,21 @@
+.wrapper-catalogue{
+  display: grid;
+  grid-gap: var(--outside-spacing);
+  @media (min-width: 1024px){
+    grid-template: 1fr / 1fr 15rem;
+  }
+}
+
+.main-show > *:not(:last-child){
+  margin-bottom: var(--component-spacing);
+}
+
+.title-show{
+  display: flex;
+  justify-content: space-between;
+}
+
+.pages{
+  margin-top: auto;
+  font-size: 90%;
+}

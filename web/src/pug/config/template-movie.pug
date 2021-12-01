@@ -1,0 +1,61 @@
+extends template-master
+append dataBase
+  include ../components/mixins/iframes
+  include ../components/mixins/options
+  include ../components/mixins/download
+block content
+  .movie__wrapper
+    main(role='main').movie__info
+      include ../components/movie-info
+
+    .online__movie
+      .online__view#online
+        .online__tabs
+
+          .online__tab.active
+            .icon-mask.icon-eye
+            .online__tab-text Ver en Línea
+
+          .online__tab
+            .icon-mask.icon-youtube
+            .online__tab-text Tráiler YouTube
+
+        .online__video
+          .online__video-wrap
+            .online__streaming
+              .preloader.disable
+
+              +iframes(movie.iframes)
+
+              .icon-mask.icon-play
+
+              .online__crumbs
+                p.online__crumbs-quality= movie.iframes[0].quality
+                p.online__crumbs-lang= movie.iframes[0].lang
+                p.online__crumbs-movie= `${movie.titleLatin} (${movie.year})`
+
+              .online__select
+                .online__select-box
+                
+                  +options(movie.iframes)
+                
+              .online__options
+                .icon-mask.icon-nav
+
+            .online__trailer
+              .preloader.disable
+              iframe(data-src='http://localhost:3000/temp/cruella.html' frameborder='0' allowfullscreen)#trailer
+              //- iframe(data-src=`https://www.youtube.com/embed/${movie.youtubeID}?autoplay=1` frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen)#trailer
+
+      .online__download
+        .download__title
+          .download__title-download Descargar
+          .download__title-server Servidor
+          .download__title-quality Calidad
+          .download__title-lang Audio
+          .download__title-format Formato
+        .download__list
+          
+          +download(movie.download)
+          
+    include ../views/rating

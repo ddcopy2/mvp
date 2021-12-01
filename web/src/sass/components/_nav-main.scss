@@ -1,0 +1,10 @@
+.nav-main{
+  font-size: var(--size-subtitle);
+  font-weight: bold;
+  color: var(--color-title);
+  a:hover{
+    color: var(--accent-color);
+  }
+}
+
+// Corregir cuando se agreguen nuevos elementos en la lista

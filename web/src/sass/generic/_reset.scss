@@ -1,0 +1,53 @@
+// * Normaliza el modelo de caja en todas sus 'tag (etuquetas)'
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+// * 1. Corrije la altura de la línea en todos los navegadores.
+// * 2. Evite los ajustes de tamaño de fuente después de cambios de orientación en iOS.
+html {
+  line-height: 1.15; // 1
+  -webkit-text-size-adjust: 100%; // 2
+}
+
+// * Elimina el margen en todos los navegadores.
+body{
+  margin: 0;
+}
+
+// * 1. Elimina el 'strut (espacio)' inferior de una imagen
+// * 2. Ajusta la imagen al ancho de su contenedor
+img {
+  display: block; // 1
+  width: 100%; // 2
+}
+
+// * 1. Cambie los estilos de fuente en todos los navegadores.
+// * 2. Elimine el margen en Firefox y Safari.
+button, input, optgroup, select, textarea {
+  font-family: inherit; // 1
+  font-size: 100%; // 1
+  line-height: 1.15; // 1 
+  margin: 0; // 2 
+}
+
+// * 1. Corrija la incapacidad de diseñar tipos en los que se puede hacer clic en iOS y Safari.
+// * 2. Agrega el cursor a las etiquetas de tipo 'button'
+button, [type=button], [type=reset], [type=submit], [type=radio], [type=checkbox] {
+  cursor: pointer; // 2
+  -webkit-appearance: button; // 1
+}
+
+// * Agregue el `display` correcto en IE 10+.
+template {
+  display: none;
+}
+
+// * Evita seleccionar el texto en elementos de navegacion
+// nav{
+//   user-select: none;
+// }
+
+label[for]{
+  cursor: pointer;
+}

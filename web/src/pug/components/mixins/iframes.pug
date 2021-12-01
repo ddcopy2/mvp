@@ -1,0 +1,3 @@
+mixin iframes(data)
+  each iframe in data
+    iframe(data-src=`${iframe.url}?autoplay=1` frameborder='0' allowfullscreen).online__movies

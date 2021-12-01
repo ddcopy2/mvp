@@ -1,0 +1,68 @@
+h1.movie__title= movie.titleLatin
+.movie__synopsis#movie-synopsis
+  .movie__synopsis--hidden
+    each synopsis in movie.synopsis
+      p= synopsis
+  .movie__read
+    .movie__read-content#movie-read
+      .icon-mask.icon-arrow
+      .movie__read-text#read-text Mostrar más
+h2.movie__subtitle= movie.titleOriginal
+.movie__img
+  picture
+    source(type='image/webp' media='(max-width: 767px)' srcset=`${root}res/img/cover/${movie.year}/${movie.url}-187x277.webp 187w` sizes='35vw')
+    
+    source(type='image/webp' media='(max-width: 1023px)' srcset=`${root}res/img/cover/${movie.year}/${movie.url}-332x491.webp 332w` sizes='30vw')
+    
+    source(type='image/webp' media='(min-width: 1024px)' srcset=`${root}res/img/cover/${movie.year}/${movie.url}-240x355.webp 240w` sizes='240px')
+    
+    source(media='(max-width: 767px)' srcset=`${root}res/img/cover/${movie.year}/${movie.url}-187x277.jpg 187w` sizes='35vw')
+    
+    source(media='(max-width: 1023px)' srcset=`${root}res/img/cover/${movie.year}/${movie.url}-332x491.jpg 332w` sizes='30vw')
+
+    img(src=`${root}res/img/cover/${movie.year}/${movie.url}-240x355.jpg` alt=`Caratula de la película ${movie.titleLatin}` loading='eager')
+
+.movie__year
+  .icon-mask.icon-year
+  p= movie.year
+.movie__time
+  .icon-mask.icon-clock
+  p= movie.time
+.movie__quality
+  .icon-mask.icon-quality
+  p
+    each quality, i in movie.quality
+      if i === movie.quality.length - 1
+        = quality
+      else
+        = `${quality} - `
+.movie__genres
+  .icon-mask.icon-genres
+  p
+    each genres, i in movie.genres
+      if i === movie.genres.length - 1
+        = genres
+      else
+        = `${genres}, `
+.movie__lang
+  .icon-mask.icon-lang
+  p
+    each lang, i in movie.lang
+      if i === movie.lang.length - 1
+        = lang
+      else
+        = `${lang}, `
+p.movie__actors
+  span Reparto: &nbsp;
+  each actors, i in movie.actors
+    if i === movie.actors.length - 1
+      = actors
+    else
+      = `${actors}, `
+p.movie__director
+  span Director: &nbsp;
+  each director, i in movie.director
+    if i === movie.director.length - 1
+      = director
+    else
+      = `${director}, `

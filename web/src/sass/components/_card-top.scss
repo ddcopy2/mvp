@@ -1,0 +1,42 @@
+.card-top{
+  width: 9.4%;
+  margin: 0 .3%;
+  position: relative;
+  overflow: hidden;
+  border: var(--border-cover);
+  border-radius: var(--radius);
+  @media (min-width: 768px){
+    width: 19.4%;
+  }
+  @media (min-width: 1024px){
+    width: 48%;
+    margin: 0;
+    &:nth-child(-n+8){
+      margin-bottom: .5rem;
+    }
+  }
+  picture{
+    position: absolute;
+    top: 0;
+  }
+}
+
+.card-top::after{
+  content: '';
+  display: block;
+  padding-top: 148.13%;
+  background: var(--bg-second);
+  @media (min-width: 1024px){
+    padding-top: 147.83%;
+  }
+}
+
+.wrapper-card-top{
+  .icon-arrow{
+    background: var(--accent-color);
+  }
+  .icon-disable{
+    pointer-events: none;
+    background: var(--icon-disable);
+  }
+}

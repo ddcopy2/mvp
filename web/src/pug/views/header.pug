@@ -1,0 +1,8 @@
+header.header
+  .header-box
+    .logo
+      if root == ''
+        img(src=`${root}res/img/logo.svg` loading='eager')
+      else
+        a(href='/') #[img(src=`${root}res/img/logo.svg` loading='eager')]
+    include ../components/nav-main

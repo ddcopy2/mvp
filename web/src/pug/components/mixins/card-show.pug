@@ -1,0 +1,43 @@
+mixin card-show(data)
+  each card, i in data
+    if i >= init
+      if i < end
+        article.card-show
+          h2(title= `${card.titleLatin} (${card.year})`).card-show__title= card.titleLatin
+          .card-show__content
+            .card-show__cover
+              a(href=`${root}pelicula/${card.year}/${card.url}.html`)
+                picture
+                  if i == 0
+                    source(type='image/webp' media='(max-width: 767px)' srcset=`${root}res/img/cover/${card.year}/${card.url}-231x342.webp 231w` sizes='50vw')
+                    
+                    source(type='image/webp' media='(max-width: 1023px)' srcset=`${root}res/img/cover/${card.year}/${card.url}-255x377.webp 255w` sizes='25vw')
+                    
+                    source(type='image/webp' media='(min-width: 1024px)' srcset=`${root}res/img/cover/${card.year}/${card.url}-200x296.webp 200w` sizes='200px')
+                    
+                    source(media='(max-width: 767px)' srcset=`${root}res/img/cover/${card.year}/${card.url}-231x342.jpg 231w` sizes='50vw')
+                    
+                    source(media='(max-width: 1023px)' srcset=`${root}res/img/cover/${card.year}/${card.url}-255x377.jpg 255w` sizes='25vw')
+
+                    img(src=`${root}res/img/cover/${card.year}/${card.url}-200x296.jpg` srcset=`${root}res/img/cover/${card.year}/${card.url}-200x296.jpg 200w` sizes='200px' alt=`Caratula ${card.titleLatin}` loading='eager')
+                  else 
+                    img(src=`${root}res/img/cover/temp/${card.url}.jpg` loading='lazy')
+
+                .card-show__year= card.year
+            if i % 2 == 0
+              .card-show__icon.card-show__icon--left
+                .icon-color.icon-info
+            else 
+              .card-show__icon.card-show__icon--right
+                .icon-color.icon-info
+            .card-show__info
+                p= card.titleLatin
+                .card-show__property
+                  .card-show__property--duration
+                    .icon-mask.icon-clock
+                    span= card.duration
+                  .card-show__property--quality
+                    .icon-mask.icon-quality
+                    span= card.quality
+                p=`${card.summary}...`
+                .card-show__genres= card.genres

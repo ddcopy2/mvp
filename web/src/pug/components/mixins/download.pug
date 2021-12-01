@@ -1,0 +1,9 @@
+mixin download(data)
+  each item in data
+    a(href= item.url).download__item
+      .download__item-icon
+        .icon-mask.icon-download
+      .download__item-server= item.server
+      .download__item-quality= item.quality
+      .download__item-lang= item.lang
+      .download__item-format= item.format

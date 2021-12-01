@@ -1,0 +1,19 @@
+mixin card-top(data)
+  each card, i in data
+    article.card-top
+      a(href=`${root}pelicula/${card.year}/${card.url}.html` title=`${card.titleLatin} (${card.year})`)
+        picture
+          if i == 0
+            source(type='image/webp' media='(max-width: 1023px)' srcset=`${root}res/img/cover/${card.year}/${card.url}-187x277.webp 187w` sizes='35vw')
+
+            source(type='image/webp' media='(min-width: 1024px)' srcset=`${root}res/img/cover/${card.year}/${card.url}-115x170.webp 115w` sizes='115px')
+
+            source(media='(max-width: 1023px)' srcset=`${root}res/img/cover/${card.year}/${card.url}-187x277.jpg 187w` sizes='50vw')
+
+            img(src=`${root}res/img/cover/${card.year}/${card.url}-115x170.jpg` srcset=`${root}res/img/cover/${card.year}/${card.url}-115x170.jpg 115w` sizes='115px' alt=`Caratula ${card.titleLatin}` loading='lazy')
+          else
+            img(src=`${root}res/img/cover/temp/${card.url}.jpg` alt=`Caratula ${card.titleLatin}` loading='lazy')
+
+
+
+//- Quitar la condicional if y corregir ruta de la imagen
